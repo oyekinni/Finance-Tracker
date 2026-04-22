@@ -1,6 +1,7 @@
+// Main class that handles overall finance tracking
 public class FinanceTracker {
     private User user;
-// Main class that handles overall finance tracking
+
     public FinanceTracker(User user) {
         this.user = user;
     }
