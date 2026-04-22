@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class User {
     private String name;
     private ArrayList<Transaction> transactions;
+ // Stores user information and manages transactions
 
     public User(String name) {
         this.name = name;
