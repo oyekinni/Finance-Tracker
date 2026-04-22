@@ -1,4 +1,4 @@
-public class FinanceTrackerTest {
+// Tests functionality of FinanceTracker class
     public static void main(String[] args) {
         User user = new User("Omotayo");
 
