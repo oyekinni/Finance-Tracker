@@ -6,40 +6,59 @@ public class User {
     private String name;
     private ArrayList<Transaction> transactions;
 
+    // Constructor
     public User(String name) {
         this.name = name;
-        transactions = new ArrayList<>();
+        this.transactions = new ArrayList<>();
     }
 
-    // Returns the list of transactions
+    // Returns user name
+    public String getName() {
+        return name;
+    }
+
+    // Sets user name
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // Returns transaction list
     public ArrayList<Transaction> getTransactions() {
         return transactions;
     }
 
-    // Adds a new transaction
-    public void addTransaction(Transaction t) {
-        transactions.add(t);
+    // Adds a transaction
+    public void addTransaction(Transaction transaction) {
+        transactions.add(transaction);
     }
 
-    // Calculates total balance
+    // Calculates current balance
     public double getBalance() {
-        double total = 0;
+        double balance = 0;
 
         for (Transaction t : transactions) {
+
             if (t.getType().equalsIgnoreCase("Income")) {
-                total += t.getAmount();
-            } else {
-                total -= t.getAmount();
+                balance += t.getAmount();
+            }
+            else if (t.getType().equalsIgnoreCase("Expense")) {
+                balance -= t.getAmount();
             }
         }
 
-        return total;
+        return balance;
     }
 
-    // Prints all transactions
+    // Displays all transactions
     public void printTransactions() {
-        for (Transaction t : transactions) {
-            System.out.println(t);
+
+        if (transactions.isEmpty()) {
+            System.out.println("No transactions available.");
+        }
+        else {
+            for (Transaction t : transactions) {
+                System.out.println(t);
+            }
         }
     }
 }
